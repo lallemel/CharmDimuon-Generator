@@ -1,12 +1,12 @@
-# Step 3: NuDimuon-Generator
+# Step 3: NuDimuon-Generator & IceTray
 
-## Addition of a OneWeight to the Events
+## Addition of the P-ONE Geometry and a Weight
 
 Author: Louise Lallement Arnaud  
 Contact: lallemen@ualberta.ca or louise.lallement@etu.univ-grenoble-alpes.fr  
 Working with: Sourav Sarkar, Juan Pablo Yáñez
 
-This step consists in getting the previously generated files into the IceCube software IceTray in order to add a weight to each event.
+This step consists in running the generator NuDimuon-Generator to convert the previously generated files into .h5 files and then getting these into the IceCube software IceTray in order to add the P-ONE geometry and a weight to each event.
 
 ## Terminal Set-Up
 
@@ -15,7 +15,7 @@ This step consists in getting the previously generated files into the IceCube so
 cd /data/p-one/<USERNAME>/dimuon_generator
 mkdir NuDimuonGenerator
 cd NuDimuonGenerator
-cp /data/p-one/llallement/dimuon_generator/NuDimuonGenerator/instructions_2/*
+cp /data/p-one/llallement/dimuon_generator/NuDimuonGenerator/instructions_3/*
 ```
 
 The original files I worked with can be found here if needed:
@@ -38,26 +38,21 @@ source setup.sh
 cd modules
 
 # run the charm muon generator
-python3 get_charm_muons.py -i <INPUT TEXT FILE PATH> -o <OUTPUT H5 FILE NAME> -m water -s <RANDOM SEED>
+python3 get_charm_muons.py -i <INPUT TEXT FILE PATH> -o <OUTPUT H5 FILE PATH> -m water -s <RANDOM SEED>
 ```
 
 The input text file here should be one of the text files generated during Step 2 and containing PYTHIA output. The output file name should include the extension *.h5. I chose to name my output files *_dimuonOutput.h5, where * is the original random seed (carried along from the LeptonInjector). The full absolute path of the input and output files should be provided here.
 
 At the end of the run, a new .h5 file is generated with the final event output particles. The event particle list is in the 'EventParticleList' object within the file. Each individual event is treated as a dataset within this object with the dataset name as the event ID (in string).
 
-I have a script to run this command for all 100 PYTHIA output files. I store all the final output files into a data_files directory.
+I have a script to run this command for all 100 PYTHIA output files:
 
 ```bash
 # generate data files
 python3 generate_data_files_3.py
 ```
 
-Be careful! There is a datapath in the get_charm_muons.py script (line 24) that needs to be updated if you did not place the various copied files immediately in the NuDimuon-Generator directory.
-
-The files I generated can be found here:
-```bash
-cp /data/p-one/llallement/dimuon_generator/NuDimuon-Generator/results_3/
-```
+Be careful! There is a datapath in the get_charm_muons.py script (line 24) that needs to be updated if you did not place the various copied files immediately in the NuDimuonGenerator directory.
 
 ## Data Analysis
 
@@ -78,6 +73,7 @@ git reset --hard origin/main
 git pull
 
 # load the repository setup
+cd NuDimuon-Generator
 source setup.sh
 ```
 
@@ -95,6 +91,8 @@ The output file name should have the extension *.i3.gz. The random seed should b
 
 ## Event Weight Computation
 
+The weight computed here is called 'OneWeight'. It is independent of the neutrino flux. For more details about it, please see Sourav Sarkar's PhD thesis:
+
 ```bash
 # compute event weights
 cd ...\NuDimuon-Generator/scripts/weight_generation_run/
@@ -102,6 +100,11 @@ python3 compute_weights.py -i <INPUT I3 FILE PATH> -l <LEPTON INJECTOR H5 FILE P
 ```
 
 The config file here is the very first config file that we generated, with extension *.json. The output file should have extension *.i3.gz.
+
+The files I generated can be found here:
+```bash
+cp /data/p-one/llallement/dimuon_generator/NuDimuonGenerator/results_3/
+```
 
 ## A Word on .i3 Files
 
