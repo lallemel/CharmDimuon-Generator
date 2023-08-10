@@ -4,7 +4,7 @@
 
 Summer internship at the University of Alberta (May-August 2023)    
 Supervisor: Juan Pablo Yáñez (yaezgarz@ualberta.ca)  
-Secondary supervisor: Sourav Sarkar (ssarkar1@ualberta.ca)
+Working with: Sourav Sarkar (ssarkar1@ualberta.ca)
 
 My role with the P-ONE team at the UofA was to develop a charm dimuon event generator. The generator is built in several steps to eventually generate approximately 1,000,000 charm dimuon events. This repository contains all my scripts for the different steps. A lot of other scripts are used, mostly written by Sourav Sarkar; they are linked in the different instruction files. The scripts I have written are to be run on the Illume cluster (UofA cluster), but can be adapted to run elsewhere.
 
