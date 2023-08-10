@@ -64,7 +64,7 @@ The parameters in the config file should match these:
 "MaxAzimuth" : 360.0, // [deg]
 "injRadius" : 400.0, // [m]
 "endLength" : 800.0, // [m]
-"out_folder" : "./data_files/", // should be checked/changed accordingly
+"out_folder" : "./data_files/", // should be checked and changed accordingly
 "out_filename" : "li.h5",
 "lw_filename" : "lw.lic"
 ```
