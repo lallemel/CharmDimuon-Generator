@@ -84,10 +84,10 @@ This will generate two files: a .h5 file and a .lic file. The .h5 file contains 
 The goal here is to simulate 1,000,000 neutrino CC DIS events: 500k muon neutrino events and 500k muon antineutrino events. I chose to generate chunks of 10k events and hence required 50 different config files with different seeds for each incoming particle type.
 
 Two files were previously copied:
-- generate_config_files_1.py, a script to generate 100 config files with different random seeds ([110001, 110050] for neutrino events and [110051, 110100] for antineutrino events);
+- generate_config_1.py, a script to generate 100 config files with different random seeds ([110001, 110050] for neutrino events and [110051, 110100] for antineutrino events);
 - generate_data_files_1.py, a script to run the inject_muons.py and fix_primary.py scripts over the 100 config files.
 
-I personally created two directories config_files and data_files to store these files. Check the indicated datapaths carefully! There is also a datapath indicated in the orginal LI_config.json that should be updated accordingly.
+Check the indicated datapaths carefully! There is also a datapath indicated in the orginal LI_config.json that should be updated accordingly.
 
 ```bash
 # generate 100 config files
