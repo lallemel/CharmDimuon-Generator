@@ -8,6 +8,12 @@ Secondary supervisor: Sourav Sarkar (ssarkar1@ualberta.ca)
 
 My role with the P-ONE team at the UofA was to develop a charm dimuon event generator. The generator is built in several steps to eventually generate approximately 1,000,000 charm dimuon events. This repository contains all my scripts for the different steps. A lot of other scripts are used, mostly written by Sourav Sarkar; they are linked in the different README.md files. The scripts I have written are to be run on the Illume cluster (UofA cluster), but can be adapted to run elsewhere.
 
+Here are the different steps:
+- step 1: Lepton Injector
+- step 2: PYTHIA
+- step 3: NuDimuon Generator
+- step 4: PROPOSAL
+
 ## A Word on P-ONE and Dimuons
 
 The Pacific Ocean Neutrino Experiment, or P-ONE, is a proposed neutrino telescope to be deployed off the coast of British Columbia, Canada. The project describes a multi cubic-kilometer Cherenkov detector designed to observe neutrino interactions at energies in the TeV-PeV range. The telescope’s unique spatial and temporal resolutions will enable unprecedented identification of the products of these interactions. With P-ONE, physicists aim to investigate fundamental particle physics at the PeV scale and uncover previously unknown astronomical phenomena.
