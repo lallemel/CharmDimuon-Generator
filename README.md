@@ -1,6 +1,6 @@
 # Step 2: PYTHIA
 
-## Update of the Events with Charm Quark Production
+## Update of the Events with Charm Quark/Hadron Production
 
 Author: Louise Lallement Arnaud  
 Contact: lallemen@ualberta.ca or louise.lallement@etu.univ-grenoble-alpes.fr  
@@ -8,7 +8,7 @@ Working with: Sourav Sarkar, Juan Pablo Yáñez
 
 This step consists in running the LHC software package PYTHIA over the 1,000,000 previously generated events to update them with charm quark (then hadron) production.
 
-## Terminal set-up
+## Terminal Set-Up
 
 ```bash
 # copy the relevant files
@@ -32,7 +32,7 @@ export PYTHONPATH=$DIMUON_REPO/modules:$PYTHONPATH
 export LHAPDF_DATA_PATH=$DIMUON_REPO/data/pdfsets
 ```
 
-## Interaction target sampler
+## Interaction Target Sampler
 
 The target for the incoming (anti)neutrino is water (10 Hydrogen atoms and 8 Oxygen atoms per water molecule). The target sampler (file charm_config.py that was copied) generates sampled config files with extension *_charmConfig.txt. We use the config and .h5 files generated in the first step with the LeptonInjector.
 
@@ -43,7 +43,7 @@ python3 charm_config.py -f <H5 FILE PATH> -c <CONFIG FILE PATH>
 
 The resulting file contains 4 columns of data: event ID, incoming neutrino PDG code, neutrino energy in GeV and target code (1 for proton, 2 for neutron).
 
-I wrote a script to run this command for all 100 config and .h5 files from the first step. It was copied earlier. Again, I have a config_files directory, but check the datapath!
+I wrote a script to run this command for all 100 config and .h5 files from the first step. It was copied earlier. Again, check the datapath!
 
 ```bash
 # generate config files
@@ -66,9 +66,9 @@ make dire08
 ./dire08 nu_ccdis.cmnd <CONFIG FILE PATH> <OUTPUT FILE NAME>
 ```
 
-The config file here is a sampled config file with extension *_charmConfig.txt generated before and the output file name must contain a *.txt extension. I have a data_files directory to store all the output files.
+The config file here is a sampled config file with extension *_charmConfig.txt generated before and the output file name must contain a *.txt extension.
 
-## Job submission
+## Job Submission
 
 The code above takes ~1h to run for each chunk of 10k events. It becomes necessary to submit these as CPU jobs on HTCondor. I ran 100 jobs with the same submission file charm_events.sub. It excecutes the charm_events.sh bash script. There is a datapath to be updated in the bash script. The submission file must specify a Singularity image, check that path! All the other paths should start from the directory where the submission and bash files are located.
 
@@ -84,6 +84,6 @@ The files I generated can be found here:
 cp /data/p-one/llallement/dimuon_generator/PYTHIA/results_2/
 ```
 
-## Data analysis
+## Data Analysis
 
 A Jupyter notebook can be found among the copied files. It contains a few plots of some properties of the charm quarks/hadrons: hadrons distribution, inelasticity distribution, mean inelasticity and mean opening angles. These plots have been validated in team meetings and can somewhat be used as references when generating your own data. Their validation was based on people's prior knowledge and on two papers: https://arxiv.org/pdf/hep-ex/0102049.pdf (Fig. 7), https://arxiv.org/pdf/1808.07629.pdf (Fig. 8); and more generally on Sourav Sarkar's PhD thesis: https://github.com/ssarkarbht/PhDThesis.
