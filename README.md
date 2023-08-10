@@ -1,4 +1,4 @@
-# p-one
+# NuDimuon-Generator
 
 ## Dimuon Event Signatures in P-ONE Neutrino Telescope
 
