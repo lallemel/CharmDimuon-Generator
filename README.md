@@ -1,21 +1,59 @@
-# NuDimuon-Generator
+## Step 3: NuDimuon-Generator
 
-## Dimuon Event Signatures in P-ONE Neutrino Telescope
+Author: Louise Lallement Arnaud  
+Contact: lallemen@ualberta.ca or louise.lallement@etu.univ-grenoble-alpes.fr  
+Working with: Sourav Sarkar, Juan Pablo Yanez
 
-Summer internship at the University of Alberta (May-August 2023)    
-Supervisor: Juan Pablo Yáñez (yaezgarz@ualberta.ca)  
-Working with: Sourav Sarkar (ssarkar1@ualberta.ca)
+## Terminal set-up
 
-My role with the P-ONE team at the UofA was to develop a charm dimuon event generator. The generator is built in several steps to eventually generate approximately 1,000,000 charm dimuon events. This repository contains all my scripts for the different steps. A lot of other scripts are used, mostly written by Sourav Sarkar; they are linked in the different instruction files. The scripts I have written are to be run on the Illume cluster (UofA cluster), but can be adapted to run elsewhere.
+```bash
+# copy the relevant files
+cd /data/p-one/<USERNAME>/dimuon_generator
+mkdir NuDimuon-Generator
+cd NuDimuon-Generator
+cp /data/p-one/llallement/dimuon_generator/NuDimuon-Generator/instructions_2/*
+```
 
-The different steps of the generator are:
-- step 1: LeptonInjector (generation of muon (anti)neutrino CC DIS events);
-- step 2: PYTHIA (event update with charm quark production);
-- step 3: NuDimuon-Generator (addition of the OneWeight to the events);
-- step 4: PROPOSAL (propagation of the daughter particles).
+The original files I worked with can be found here if needed:
+```bash
+git clone https://github.com/ssarkarbht/NuDimuon-Generator.git
+```
 
-## A Word on P-ONE and Dimuons
+We are still working in the same Singularity container.
 
-The Pacific Ocean Neutrino Experiment, or P-ONE, is a proposed neutrino telescope to be deployed off the coast of British Columbia, Canada. The project describes a multi cubic-kilometer Cherenkov detector designed to observe neutrino interactions at energies in the TeV-PeV range. The telescope’s unique spatial and temporal resolutions will enable unprecedented identification of the products of these interactions. With P-ONE, physicists aim to investigate fundamental particle physics at the PeV scale and uncover previously unknown astronomical phenomena.
+```bash
+# set up environment variables
+source setup.sh
+```
 
-Dimuons are the result of a specific neutrino interaction. If it is typical for muon neutrinos to interact via deep inelastic scattering to produce a single muon, the Standard Model also predicts that, in certain instances, a pair of closely spaced high-energy muons will be produced from the same neutrino interaction. This phenomenon is referred to as a ’dimuon’. The detection of these events in P-ONE can serve as a way to investigate rare Standard Model neutrino interactions and deviations in their rate could indicate the existence of physics beyond the Standard Model. Such observations could potentially provide valuable insights into new and yet unexplored phenomena in the realm of particle physics.
+## Charm muon generator
+
+```bash
+# go to the module directory
+cd modules
+
+# run the charm muon generator
+python3 get_charm_muons.py -i <INPUT TEXT FILE PATH> -o <OUTPUT H5 FILE NAME> -m water -s <RANDOM SEED>
+```
+
+The input text file here should be one of the text files generated during Step 2 and containing PYTHIA output. The output file name should include the extension *.h5. I chose to name my output files *_dimuonOutput.h5, where * is the original random seed (carried along from the LeptonInjector). The full absolute path of the input and output files should be provided here.
+
+At the end of the run, a new .h5 file is generated with the final event output particles. The event particle list is in the 'EventParticleList' object within the file. Each individual event is treated as a dataset within this object with the dataset name as the event ID (in string).
+
+I have a script to run this command for all 100 PYTHIA output files. I store all the final output files into a data_files directory.
+
+```bash
+# generate data files
+python3 generate_data_files_3.py
+```
+
+Be careful! There is a datapath in the get_charm_muons.py script (line 24) that needs to be updated if you did not place the various copied files immediately in the NuDimuon-Generator directory.
+
+The files I generated can be found here:
+```bash
+cp /data/p-one/llallement/dimuon_generator/NuDimuon-Generator/results_3/
+```
+
+## Data analysis
+
+Among the previously copied files is a Jupyter notebook that plots some basic features of the final generated events. You can have a look at the plots or use the notebook to check your own generated data. None of these plots are of great importance as the events still have not been weighted, but you can have a look all the same.
