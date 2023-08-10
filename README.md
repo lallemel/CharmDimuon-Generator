@@ -1,4 +1,4 @@
-# Step 3: IceTray
+# Step 3: NuDimuon-Generator
 
 ## Addition of a OneWeight to the Events
 
@@ -8,14 +8,14 @@ Working with: Sourav Sarkar, Juan Pablo Yáñez
 
 This step consists in getting the previously generated files into the IceCube software IceTray in order to add a weight to each event.
 
-## Terminal set-up
+## Terminal Set-Up
 
 ```bash
 # copy the relevant files
 cd /data/p-one/<USERNAME>/dimuon_generator
-mkdir NuDimuon-Generator
-cd NuDimuon-Generator
-cp /data/p-one/llallement/dimuon_generator/NuDimuon-Generator/instructions_2/*
+mkdir NuDimuonGenerator
+cd NuDimuonGenerator
+cp /data/p-one/llallement/dimuon_generator/NuDimuonGenerator/instructions_2/*
 ```
 
 The original files I worked with can be found here if needed:
@@ -27,10 +27,11 @@ We are still working in the same Singularity container.
 
 ```bash
 # set up environment variables
+cd NuDimuon-Generator
 source setup.sh
 ```
 
-## Charm muon generator
+## Charm Muon Generator
 
 ```bash
 # go to the module directory
@@ -58,6 +59,6 @@ The files I generated can be found here:
 cp /data/p-one/llallement/dimuon_generator/NuDimuon-Generator/results_3/
 ```
 
-## Data analysis
+## Data Analysis
 
 Among the previously copied files is a Jupyter notebook that plots some basic features of the final generated events. You can have a look at the plots or use the notebook to check your own generated data. None of these plots are of great importance as the events still have not been weighted, but you can have a look all the same.
