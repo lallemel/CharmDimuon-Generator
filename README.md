@@ -4,7 +4,7 @@
 
 Author: Louise Lallement Arnaud  
 Contact: lallemen@ualberta.ca or louise.lallement@etu.univ-grenoble-alpes.fr  
-Working with: Sourav Sarkar, Juan Pablo Yanez
+Working with: Sourav Sarkar, Juan Pablo Yáñez
 
 This step consists in getting the previously generated files into the IceCube software IceTray in order to add a weight to each event.
 
