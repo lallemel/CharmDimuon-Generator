@@ -1,6 +1,6 @@
 # p-one
 
-Summer internship at the University of Alberta (May-August 2023)
+Summer internship at the University of Alberta (May-August 2023)\\
 Dimuon event signatures in P-ONE neutrino telescope
 Supervisor: Juan Pablo Yáñez (yaezgarz@ualberta.ca)
 Secondary supervisor: Sourav Sarkar (ssarkar1@ualberta.ca)
