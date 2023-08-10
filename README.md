@@ -1,4 +1,4 @@
-# P-ONE Charm Dimuon Event Generator Step 1
+# Step 1: LeptonInjector
 
 ## Generation of Muon (Anti)Neutrino CC DIS Events
 
@@ -10,7 +10,7 @@ This step consists in running the LeptonInjector to generate 1,000,000 charged c
 
 ## Singularity Container
 
-This work should be implemented within the Singularity container.
+This work should be implemented within the Singularity container:
 
 ```bash
 # go to personal data directory
