@@ -91,15 +91,15 @@ The output file name should have the extension *.i3.gz. The random seed should b
 
 ## Event Weight Computation
 
-The weight computed here is called 'OneWeight'. It is independent of the neutrino flux. For more details about it, please see Sourav Sarkar's PhD thesis:
+The weight computed here is called 'OneWeight'. It is independent of the neutrino flux. For more details about it, please see Sourav Sarkar's PhD thesis: https://github.com/ssarkarbht/PhDThesis.
 
 ```bash
 # compute event weights
-cd ...\NuDimuon-Generator/scripts/weight_generation_run/
+cd .../NuDimuon-Generator/scripts/weight_generation_run/
 python3 compute_weights.py -i <INPUT I3 FILE PATH> -l <LEPTON INJECTOR H5 FILE PATH> -c <CHARM MUON H5 FILE PATH> -f <LEPTON INJECTOR CONFIG FILE PATH> -o <OUTPUT I3 FILE PATH>
 ```
 
-The config file here is the very first config file that we generated, with extension *.json. The output file should have extension *.i3.gz.
+The config file here is the very first config file that was generated, with extension *.json. The output file should have extension *.i3.gz.
 
 The files I generated can be found here:
 ```bash
@@ -113,3 +113,8 @@ To view the content of an .i3 file, you can run:
 dataio-shovel <I3 FILE NAME>
 ```
 
+An .i3 file is composed of several frames, labelled with letters. In these .i3 files, the only types of frame we have are information frames (I) and DAQ frames (Q). The I frames hold basic information about the run. The Q frames hold all the event properties we are interested in. 
+
+...
+
+In order to process .i3 data files, a pipeline needs to be created. A Jupyter notebook has been copied which shows an example of a pipeline that extracts some values and put them into numpy arrays. These properties can then be plotted accordingly. The few plots that can be found in the notebook have been validated by Sourav and can be used as references.
