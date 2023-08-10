@@ -113,8 +113,12 @@ To view the content of an .i3 file, you can run:
 dataio-shovel <I3 FILE NAME>
 ```
 
-An .i3 file is composed of several frames, labelled with letters. In these .i3 files, the only types of frame we have are information frames (I) and DAQ frames (Q). The I frames hold basic information about the run. The Q frames hold all the event properties we are interested in. 
+An .i3 file is composed of several frames, labelled with letters. In these .i3 files, the only types of frame we have are information frames (I) and DAQ frames (Q). The I frames hold basic information about the run. The Q frames hold all the event properties we are interested in. One can use the arrow keys to navigate the file, the enter key to access a frame or object and the 'Q' key to exit it.
 
-...
+The final 'weighted' files contain four objects per Q frame:
+- I3MCTree contains information about the event kinematics: particle ID, type, position, direction, time, energy and length (which is a NaN as the particles have not been propagated yet);
+- I3MCWeightDict contains a lot of information on the event and, most importantly, the OneWeight;
+- CharmWeightDict contains some information on the charm quark and hadron;
+- I3EventHeader just contains information on the run (not important as this is a simulation).
 
 In order to process .i3 data files, a pipeline needs to be created. A Jupyter notebook has been copied which shows an example of a pipeline that extracts some values and put them into numpy arrays. These properties can then be plotted accordingly. The few plots that can be found in the notebook have been validated by Sourav and can be used as references.
