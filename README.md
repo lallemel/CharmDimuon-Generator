@@ -1,12 +1,12 @@
 # Step 2: PYTHIA
 
-## Event Update with Charm Quark Production
+## Update of the Events with Charm Quark Production
 
 Author: Louise Lallement Arnaud  
 Contact: lallemen@ualberta.ca or louise.lallement@etu.univ-grenoble-alpes.fr  
 Working with: Sourav Sarkar, Juan Pablo Yáñez
 
-This step consist in running the LHC software package PYTHIA over the 1,000,000 previously generated events to update them with charm quark (then hadron) production.
+This step consists in running the LHC software package PYTHIA over the 1,000,000 previously generated events to update them with charm quark (then hadron) production.
 
 ## Terminal set-up
 
