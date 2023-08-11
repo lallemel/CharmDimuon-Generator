@@ -11,7 +11,7 @@ My role with the P-ONE team at the UofA was to develop a charm dimuon event gene
 The different steps of the generator are:
 - step 1: LeptonInjector (generation of muon (anti)neutrino CC DIS events);
 - step 2: PYTHIA (update of the events with charm quark/hadron production);
-- step 3: NuDimuon-Generator & IceTray (addition of the P-ONE geometry and a weight);
+- step 3: NuDimuon-Generator & IceTray (addition of the P-ONE geometry and event weight);
 - step 4: PROPOSAL (propagation of the daughter particles in water).
 
 ## A Word on P-ONE and Dimuons
