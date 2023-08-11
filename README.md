@@ -1,6 +1,6 @@
 # Step 3: NuDimuon-Generator & IceTray
 
-## Addition of the P-ONE Geometry and a Weight
+## Addition of the P-ONE Geometry and Event Weight
 
 Author: Louise Lallement Arnaud  
 Contact: lallemen@ualberta.ca or louise.lallement@etu.univ-grenoble-alpes.fr  
