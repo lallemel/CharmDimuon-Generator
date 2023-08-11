@@ -20,7 +20,7 @@ The Pacific Ocean Neutrino Experiment, or P-ONE, is a proposed neutrino telescop
 
 Dimuons are the result of a specific neutrino interaction. If it is typical for muon neutrinos to interact via deep inelastic scattering to produce a single muon, the Standard Model also predicts that, in certain instances, a pair of closely spaced high-energy muons will be produced from the same neutrino interaction. This phenomenon is referred to as a 'dimuon'. The detection of these events in P-ONE can serve as a way to investigate rare Standard Model neutrino interactions and deviations in their rate could indicate the existence of physics beyond the Standard Model. Such observations could potentially provide valuable insights into new and yet unexplored phenomena in the realm of particle physics.
 
-The diagram below outlines the mechanism behind a charm dimuon event. A muon neutrino will first interact to produce a primary muon and a charm quark (in a hadronic shower). The latter will hadronize to produce a charm hadron, which will then decay or interact to produce a secondary muon and another hadronic shower.
+The diagram below outlines the mechanism behind a charm dimuon event. A muon neutrino will first interact via charged current deep inelastic scattering (CC DIS) to produce a primary muon and a charm quark (in a hadronic shower). The latter will hadronize to produce a charm hadron, which will then decay or interact to produce a secondary muon and another hadronic shower.
 
 ![image](https://github.com/lallemel/NuDimuon-Generator/assets/141883492/9b330dc0-c2ee-4071-bf15-24d55518489b)
 *Credits: Sourav Sarkar*
