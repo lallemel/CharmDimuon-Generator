@@ -1,0 +1,28 @@
+# charm_events.sub
+
+executable = charm_events.sh
+
+tempProc = $(ProcId) + 110001
+newProc = $INT(tempProc)
+
+input_file = config_files/$(newProc)_charmConfig.txt
+output_file = data_files/$(newProc)_charmOutput.txt
+
+log = log_files/$(newProc)_charmLog.log
+output = out_files/$(newProc)_charmOut.out
+error = err_files/$(newProc)_charmErr.err
+
+should_transfer_files = Yes
+when_to_transfer_output = ON_EXIT
+
++SingularityImage = "/data/p-one/llallement/nudimuon-generator_v1.0.sif"
+
+request_cpus = 1
+request_memory = 500M
+request_disk = 500M
+
+requirements = HasSingularity
+
+arguments = $(input_file) $(output_file)
+
+queue 100
