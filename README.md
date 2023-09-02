@@ -1,12 +1,14 @@
 # Step 3: NuDimuon-Generator & IceTray
 
-## Addition of the P-ONE Geometry and Event Weight
+## a) Charm Hadron Decay and Interaction, b) Event Weight Calculation
 
 Author: Louise Lallement Arnaud  
 Contact: lallemen@ualberta.ca or louise.lallement@etu.univ-grenoble-alpes.fr  
 Working with: Sourav Sarkar, Juan Pablo Yáñez
 
-This step consists in running the generator NuDimuon-Generator to convert the previously generated files into .h5 files and then getting these into the IceCube software IceTray in order to add the P-ONE geometry and a weight to each event.
+a) The charm hadrons are simulated to either decay into a muon or interact into water before decay. The muon energy is sampled using a parametrization technique.
+
+b) Each event is assigned a Monte Carlo event weight in Hz. It represents the probability of the event occurring given the true simulated quantities. The calculation of the weight depends on the chosen flux model, as well as different weight factors arising from each step of the simulation.
 
 ## Terminal Set-Up
 
@@ -46,17 +48,15 @@ The input text file here should be one of the text files generated during Step 2
 At the end of the run, a new .h5 file is generated with the final event output particles. The event particle list is in the 'EventParticleList' object within the file. Each individual event is treated as a dataset within this object with the dataset name as the event ID (in string).
 
 I have a script to run this command for all 100 PYTHIA output files:
-
 ```bash
-# generate data files
-python3 generate_data_files_3.py
+python3 generate_h5_files_3.py
 ```
 
 Be careful! There is a datapath in the get_charm_muons.py script (line 24) that needs to be updated if you did not place the various copied files immediately in the NuDimuonGenerator directory.
 
 ## Data Analysis
 
-Among the previously copied files is a Jupyter notebook that plots some basic features of the final generated events. You can have a look at the plots or use the notebook to check your own generated data. None of these plots are of great importance as the events still have not been weighted, but you can have a look all the same.
+Among the previously copied files is a Jupyter notebook (data_analysis_3a.ipynb) that plots some basic features of the final generated events. You can have a look at the plots or use the notebook to check your own generated data. None of these plots are of great importance as the events still have not been weighted, but you can have a look all the same.
 
 ## IceCube Environment
 
@@ -89,6 +89,11 @@ python3 convert_h5toi3.py -i <LEPTON INJECTOR H5 FILE PATH> -f <CHARM MUON H5 FI
 
 The output file name should have the extension *.i3.gz. The random seed should be the one used in the LeptonInjector file.
 
+I have a script to do that over all the files:
+```bash
+python3 generate_i3_files_3.py
+```
+
 ## Event Weight Computation
 
 The weight computed here is called 'OneWeight'. It is independent of the neutrino flux. For more details about it, please see Sourav Sarkar's PhD thesis: https://github.com/ssarkarbht/PhDThesis.
@@ -100,6 +105,11 @@ python3 compute_weights.py -i <INPUT I3 FILE PATH> -l <LEPTON INJECTOR H5 FILE P
 ```
 
 The config file here is the very first config file that was generated, with extension *.json. The output file should have extension *.i3.gz.
+
+I have a script to do that over all the files:
+```bash
+python3 generate_i3_weighted_files_3.py
+```
 
 The files I generated can be found here:
 ```bash
@@ -121,4 +131,4 @@ The final 'weighted' files contain four objects per Q frame:
 - CharmWeightDict contains some information on the charm quark and hadron;
 - I3EventHeader just contains information on the run (not important as this is a simulation).
 
-In order to process .i3 data files, a pipeline needs to be created. A Jupyter notebook has been copied which shows an example of a pipeline that extracts some values and put them into numpy arrays. These properties can then be plotted accordingly. The few plots that can be found in the notebook have been validated by Sourav and can be used as references.
+In order to process .i3 data files, a pipeline needs to be created. A Jupyter notebook has been copied (data_analysis_3b.ipynb) which shows an example of a pipeline that extracts some values and put them into numpy arrays. These properties can then be plotted accordingly. The few plots that can be found in the notebook have been validated by Sourav and can be used as references.
