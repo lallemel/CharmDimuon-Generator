@@ -1,16 +1,16 @@
 # Step 1: LeptonInjector
 
-## Generation of Muon (Anti)Neutrino CC DIS Events
+## Energy and Geometry Sampling
 
 Author: Louise Lallement Arnaud  
 Contact: lallemen@ualberta.ca or louise.lallement@etu.univ-grenoble-alpes.fr  
 Working with: Sourav Sarkar, Juan Pablo Yáñez
 
-This step consists in running the LeptonInjector to generate 1,000,000 charged current deep inelastic scattering (CC DIS) muon (anti)neutrino events.
+The incoming neutrino energy and interaction geometry are randomly sampled. A million events are generated according to an arbitrary generation spectrum (they will eventually be weighted to achieve the desired Monte Carlo statistics). The detector geometry is implemented.
 
 ## Singularity Container
 
-This work should be implemented within the Singularity container:
+Log in to your Illume account. This work should be implemented within the Singularity container.
 
 ```bash
 # go to personal data directory
@@ -40,12 +40,7 @@ The original files I worked with can be found here if needed:
 cp /data2/icecube/ssarkar/dimuon_scripts/scripts/
 ```
 
-This will copy some files, among which:
-- LI_config.json, a config file;
-- inject_muons.py, a script to generate neutrino CC DIS events;
-- fix_primary.py, a script to fix a bug.
-
-The parameters in the config file should match these:
+Among the copied files is a config file called LI_config.json. The parameters in the config file should match these:
 
 ```java
 "random_seed" : 1101011, // does not matter
@@ -55,7 +50,7 @@ The parameters in the config file should match these:
 "ranged_mode" : true,
 "finalType_1" : "MuMinus", // for neutrinos, change to "MuPlus" for antineutrinos
 "finalType_2" : "Hadrons",
-"MinEnergy" : 50.0, // [GeV]
+"MinEnergy" : 100.0, // [GeV]
 "MaxEnergy" : 1000000.0, // [GeV]
 "gamma"     : 1.5,
 "MinZenith" : 80.0, // [deg]
@@ -69,6 +64,8 @@ The parameters in the config file should match these:
 "lw_filename" : "lw.lic"
 ```
 
+You can then run a script to generate 10k events. Another script should be run to fix a bug.
+
 ```bash
 # run the LeptonInjector
 python3 inject_muons.py -c <CONFIG FILE PATH>
@@ -81,10 +78,10 @@ This will generate two files: a .h5 file and a .lic file. The .h5 file contains 
 
 ## Config and Data Files Generation
 
-The goal here is to simulate 1,000,000 neutrino CC DIS events: 500k muon neutrino events and 500k muon antineutrino events. I chose to generate chunks of 10k events and hence required 50 different config files with different seeds for each incoming particle type.
+The goal here is to simulate 1,000,000 neutrino events: 500k muon neutrino events and 500k muon antineutrino events. I chose to generate chunks of 10k events and hence required 50 different config files with different seeds for each incoming particle type.
 
 Two files were previously copied:
-- generate_config_1.py, a script to generate 100 config files with different random seeds ([110001, 110050] for neutrino events and [110051, 110100] for antineutrino events);
+- generate_config_files_1.py, a script to generate 100 config files with different random seeds ([110001, 110050] for neutrino events and [110051, 110100] for antineutrino events);
 - generate_data_files_1.py, a script to run the inject_muons.py and fix_primary.py scripts over the 100 config files.
 
 Check the indicated datapaths carefully! There is also a datapath indicated in the orginal LI_config.json that should be updated accordingly.
