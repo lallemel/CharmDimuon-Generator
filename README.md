@@ -1,12 +1,12 @@
 # Step 2: PYTHIA
 
-## Update of the Events with Charm Quark/Hadron Production
+## Primary Interaction and Hadronization
 
 Author: Louise Lallement Arnaud  
 Contact: lallemen@ualberta.ca or louise.lallement@etu.univ-grenoble-alpes.fr  
 Working with: Sourav Sarkar, Juan Pablo Yáñez
 
-This step consists in running the LHC software package PYTHIA over the 1,000,000 previously generated events to update them with charm quark (then hadron) production.
+The target nucleons are sampled based on their composition in water. Using PYTHIA and DIRE framework and the generated neutrino energies, a million muon neutrino CC DIS interactions with the target nucleons are simulated to produce outgoing muons and charm quarks, which then undergo the hadronization process.
 
 ## Terminal Set-Up
 
@@ -34,7 +34,7 @@ export LHAPDF_DATA_PATH=$DIMUON_REPO/data/pdfsets
 
 ## Interaction Target Sampler
 
-The target for the incoming (anti)neutrino is water (10 Hydrogen atoms and 8 Oxygen atoms per water molecule). The target sampler (file charm_config.py that was copied) generates sampled config files with extension *_charmConfig.txt. We use the config and .h5 files generated in the first step with the LeptonInjector.
+The target for the incoming neutrino is water (10 Hydrogen atoms and 8 Oxygen atoms per water molecule). The target sampler (file charm_config.py that was copied) generates sampled config files with extension *_charmConfig.txt. We use the config and .h5 files generated in the first step with the LeptonInjector.
 
 ```bash
 # produce sampled configuration text output
@@ -59,7 +59,7 @@ PYTHIA+DIRE software (with C++ code dire08) will produce an output text file con
 - each 'P' row has the following information: particle index, PDG code, energy, theta, phi (zenith and azimuth equivalent angles in an LHC-like z-axis coordinate system).
 
 ```bash
-# compile the C++ code (only once)
+# compile the C++ code
 make dire08
 
 # execute the compiled code
@@ -83,6 +83,8 @@ The files I generated can be found here:
 ```bash
 cp /data/p-one/llallement/dimuon_generator/PYTHIA/results_2/
 ```
+
+The executable file should compile dire08, but it does not always. It would be safer to compile it yourself before submitting the job.
 
 ## Data Analysis
 
