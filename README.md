@@ -9,10 +9,10 @@ Working with: Sourav Sarkar (ssarkar1@ualberta.ca)
 My role with the P-ONE team at the UofA was to develop a charm dimuon event generator. The generator is built in several steps to eventually generate approximately 1,000,000 charm dimuon events. This repository contains all my scripts for the different steps. A lot of other scripts are used, mostly written by Sourav Sarkar; they are linked in the different README.md files. The scripts I have written are to be run on the Illume cluster (UofA cluster).
 
 The different steps of the generator are:
-- step 1: LeptonInjector (generation of muon (anti)neutrino CC DIS events);
-- step 2: PYTHIA (update of the events with charm quark/hadron production);
-- step 3: NuDimuon-Generator & IceTray (addition of the P-ONE geometry and event weight);
-- step 4: PROPOSAL (propagation of the daughter particles in water).
+- step 1: LeptonInjector (energy and geometry sampling);
+- step 2: PYTHIA (primary interaction and hadronization);
+- step 3: NuDimuon-Generator & IceTray (charm hadron decay and interaction, event weight calculation);
+- step 4: PROPOSAL (daughter particle propagation).
 
 ## A Word on P-ONE and Dimuons
 
