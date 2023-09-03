@@ -12,7 +12,7 @@ The different steps of the generator are:
 - step 1: LeptonInjector (energy and geometry sampling);
 - step 2: PYTHIA (primary interaction and hadronization);
 - step 3: NuDimuon-Generator & IceTray (charm hadron decay and interaction, event weight calculation);
-- step 4: PROPOSAL (daughter particle propagation).
+- step 4: PROPOSAL & DoubleTrack-Run (daughter particle propagation, event rate calculation).
 
 ## A Word on P-ONE and Dimuons
 
