@@ -15,12 +15,12 @@ The target nucleons are sampled based on their composition in water. Using PYTHI
 cd /data/p-one/<USERNAME>/dimuon_generator
 mkdir PYTHIA
 cd PYTHIA
-cp /data/p-one/llallement/dimuon_generator/PYTHIA/instructions_2/*
+cp /data/p-one/llallement/dimuon_generator/PYTHIA/instructions_2/* .
 ```
 
 The original files I worked with can be found here if needed:
 ```bash
-cp $DIMUON_REPO/scripts/charm_config.py $DIMUON_REPO/scripts/dire08.cc $DIMUON_REPO/scripts/Makefile* $DIMUON_REPO/scripts/nu_ccdis.cmnd
+cp $DIMUON_REPO/scripts/charm_config.py $DIMUON_REPO/scripts/dire08.cc $DIMUON_REPO/scripts/Makefile* $DIMUON_REPO/scripts/nu_ccdis.cmnd .
 ```
 
 We are still working in the same Singularity container.
@@ -81,11 +81,11 @@ condor_submit charm_events.sub
 
 The files I generated can be found here:
 ```bash
-cp /data/p-one/llallement/dimuon_generator/PYTHIA/results_2/
+cp /data/p-one/llallement/dimuon_generator/PYTHIA/results_2/ .
 ```
 
 The executable file should compile dire08, but it does not always. It would be safer to compile it yourself before submitting the job.
 
 ## Data Analysis
 
-A Jupyter notebook can be found among the copied files. It contains a few plots of some properties of the charm quarks/hadrons: hadrons distribution, inelasticity distribution, mean inelasticity and mean opening angles. These plots have been validated in team meetings and can somewhat be used as references when generating your own data. Their validation was based on people's prior knowledge and on two papers: https://arxiv.org/pdf/hep-ex/0102049.pdf (Fig. 7), https://arxiv.org/pdf/1808.07629.pdf (Fig. 8); and more generally on Sourav Sarkar's PhD thesis: https://github.com/ssarkarbht/PhDThesis.
+A Jupyter notebook can be found among the copied files. It contains a few plots of some properties of the charm quarks/hadrons: hadrons distribution, inelasticity distribution, mean inelasticity and mean opening angles. These plots have been validated in team meetings and can somewhat be used as references when generating your own data. Their validation was based on people's prior knowledge and on two papers: https://arxiv.org/pdf/hep-ex/0102049.pdf (Fig. 7), https://arxiv.org/pdf/1808.07629.pdf (Fig. 8).
