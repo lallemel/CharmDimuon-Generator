@@ -17,7 +17,7 @@ b) Each event is assigned a Monte Carlo event weight in Hz. It represents the pr
 cd /data/p-one/<USERNAME>/dimuon_generator
 mkdir NuDimuonGenerator
 cd NuDimuonGenerator
-cp /data/p-one/llallement/dimuon_generator/NuDimuonGenerator/instructions_3/*
+cp /data/p-one/llallement/dimuon_generator/NuDimuonGenerator/instructions_3/* .
 ```
 
 The original files I worked with can be found here if needed:
@@ -113,7 +113,7 @@ python3 generate_i3_weighted_files_3.py
 
 The files I generated can be found here:
 ```bash
-cp /data/p-one/llallement/dimuon_generator/NuDimuonGenerator/results_3/
+cp /data/p-one/llallement/dimuon_generator/NuDimuonGenerator/results_3/ .
 ```
 
 ## A Word on .i3 Files
