@@ -32,12 +32,12 @@ mkdir dimuon_generator
 cd dimuon_generator
 mkdir LeptonInjector
 cd LeptonInjector
-cp /data/p-one/llallement/dimuon_generator/LeptonInjector/instructions_1/*
+cp /data/p-one/llallement/dimuon_generator/LeptonInjector/instructions_1/* .
 ```
 
 The original files I worked with can be found here if needed:
 ```bash
-cp /data2/icecube/ssarkar/dimuon_scripts/scripts/
+cp /data2/icecube/ssarkar/dimuon_scripts/scripts/ .
 ```
 
 Among the copied files is a config file called LI_config.json. The parameters in the config file should match these:
@@ -98,5 +98,5 @@ The config files have the extension *_neutrinoConfig.json and the data files hav
 
 The files I generated can be found here:
 ```bash
-cp /data/p-one/llallement/dimuon_generator/LeptonInjector/results_1/
+cp /data/p-one/llallement/dimuon_generator/LeptonInjector/results_1/ .
 ```
