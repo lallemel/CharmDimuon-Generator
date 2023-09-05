@@ -12,9 +12,9 @@ The target nucleons are sampled based on their composition in water. Using PYTHI
 
 ```bash
 # copy the relevant files
-cd /data/p-one/<USERNAME>/dimuon_generator
+cd /data/p-one/<USERNAME>/dimuon_generator/
 mkdir PYTHIA
-cd PYTHIA
+cd PYTHIA/
 cp -r /data/p-one/llallement/dimuon_generator/PYTHIA/instructions_2/* .
 ```
 
