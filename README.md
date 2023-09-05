@@ -32,12 +32,12 @@ mkdir dimuon_generator
 cd dimuon_generator
 mkdir LeptonInjector
 cd LeptonInjector
-cp /data/p-one/llallement/dimuon_generator/LeptonInjector/instructions_1/* .
+cp -r /data/p-one/llallement/dimuon_generator/LeptonInjector/instructions_1/* .
 ```
 
 The original files I worked with can be found here if needed:
 ```bash
-cp /data2/icecube/ssarkar/dimuon_scripts/scripts/ .
+cp -r /data2/icecube/ssarkar/dimuon_scripts/scripts/ .
 ```
 
 Among the copied files is a config file called LI_config.json. The parameters in the config file should match these:
@@ -74,7 +74,7 @@ python3 inject_muons.py -c <CONFIG FILE PATH>
 python3 fix_primary.py -f <H5 FILE NAME>
 ```
 
-This will generate two files: a .h5 file and a .lic file. The .h5 file contains data for the incoming muon (anti)neutrino, the outgoing (anti)muon and a generic hadron carrying the rest of the energy.
+This will generate two files: a .h5 file and a .lic file. The .h5 file contains data for the incoming muon neutrino, the outgoing muon and a generic hadron carrying the rest of the energy.
 
 ## Config and Data Files Generation
 
@@ -91,12 +91,12 @@ Check the indicated datapaths carefully! There is also a datapath indicated in t
 python3 generate_config_files_1.py
 
 # generate the corresponding data files
-python3 generate_data_files_1.py
+python3 generate_h5_files_1.py
 ```
 
 The config files have the extension *_neutrinoConfig.json and the data files have the extension *_li.h5, where * is the random seed.
 
 The files I generated can be found here:
 ```bash
-cp /data/p-one/llallement/dimuon_generator/LeptonInjector/results_1/ .
+cp -r /data/p-one/llallement/dimuon_generator/LeptonInjector/results_1/ .
 ```
