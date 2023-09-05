@@ -14,7 +14,7 @@ Log in to your Illume account. This work should be implemented within the Singul
 
 ```bash
 # go to personal data directory
-cd /data/p-one/<USERNAME>
+cd /data/p-one/<USERNAME>/
 
 # pull the container image file (only once)
 singularity pull --arch amd64 library://ssarkarbht/simgen/nudimuon-generator:v1.0
@@ -27,11 +27,11 @@ singularity shell -B /data:/data -B /data2:/data2 -B /cvmfs:/cvmfs nudimuon-gene
 
 ```bash
 # set up the LeptonInjector software
-cd /data/p-one/<USERNAME>
+cd /data/p-one/<USERNAME>/
 mkdir dimuon_generator
-cd dimuon_generator
+cd dimuon_generator/
 mkdir LeptonInjector
-cd LeptonInjector
+cd LeptonInjector/
 cp -r /data/p-one/llallement/dimuon_generator/LeptonInjector/instructions_1/* .
 ```
 
