@@ -14,10 +14,10 @@ b) Each event is assigned a Monte Carlo event weight in Hz. It represents the pr
 
 ```bash
 # copy the relevant files
-cd /data/p-one/<USERNAME>/dimuon_generator
+cd /data/p-one/<USERNAME>/dimuon_generator/
 mkdir NuDimuonGenerator
-cd NuDimuonGenerator
-cp /data/p-one/llallement/dimuon_generator/NuDimuonGenerator/instructions_3/* .
+cd NuDimuonGenerator/
+cp -r /data/p-one/llallement/dimuon_generator/NuDimuonGenerator/instructions_3/* .
 ```
 
 The original files I worked with can be found here if needed:
@@ -29,17 +29,15 @@ We are still working in the same Singularity container.
 
 ```bash
 # set up environment variables
-cd NuDimuon-Generator
+cd NuDimuon-Generator/
 source setup.sh
 ```
 
 ## Charm Muon Generator
 
 ```bash
-# go to the module directory
-cd modules
-
 # run the charm muon generator
+cd .../NuDimuon-Generator/modules/
 python3 get_charm_muons.py -i <INPUT TEXT FILE PATH> -o <OUTPUT H5 FILE PATH> -m water -s <RANDOM SEED>
 ```
 
@@ -73,7 +71,7 @@ git reset --hard origin/main
 git pull
 
 # load the repository setup
-cd NuDimuon-Generator
+cd NuDimuon-Generator/
 source setup.sh
 ```
 
@@ -113,7 +111,7 @@ python3 generate_i3_weighted_files_3.py
 
 The files I generated can be found here:
 ```bash
-cp /data/p-one/llallement/dimuon_generator/NuDimuonGenerator/results_3/ .
+cp -r /data/p-one/llallement/dimuon_generator/NuDimuonGenerator/results_3/ .
 ```
 
 ## A Word on .i3 Files
