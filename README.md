@@ -6,7 +6,7 @@ Author: Louise Lallement Arnaud
 Contact: lallemen@ualberta.ca or louise.lallement@etu.univ-grenoble-alpes.fr  
 Working with: Sourav Sarkar, Juan Pablo Yáñez
 
-The target nucleons are sampled based on their composition in water. Using PYTHIA and DIRE framework and the generated neutrino energies, a million muon neutrino CC DIS interactions with the target nucleons are simulated to produce outgoing muons and charm quarks, which then undergo the hadronization process.
+The target nucleons are sampled based on their composition in water. Using PYTHIA and DIRE framework and the previously generated neutrino energies, a million muon neutrino CC DIS interactions with the target nucleons are simulated to produce outgoing muons and charm quarks, which then undergo the hadronization process.
 
 ## Terminal Set-Up
 
@@ -15,12 +15,15 @@ The target nucleons are sampled based on their composition in water. Using PYTHI
 cd /data/p-one/<USERNAME>/dimuon_generator
 mkdir PYTHIA
 cd PYTHIA
-cp /data/p-one/llallement/dimuon_generator/PYTHIA/instructions_2/* .
+cp -r /data/p-one/llallement/dimuon_generator/PYTHIA/instructions_2/* .
 ```
 
 The original files I worked with can be found here if needed:
 ```bash
-cp $DIMUON_REPO/scripts/charm_config.py $DIMUON_REPO/scripts/dire08.cc $DIMUON_REPO/scripts/Makefile* $DIMUON_REPO/scripts/nu_ccdis.cmnd .
+cp $DIMUON_REPO/scripts/charm_config.py .
+cp $DIMUON_REPO/scripts/dire08.cc .
+cp $DIMUON_REPO/scripts/Makefile* .
+cp $DIMUON_REPO/scripts/nu_ccdis.cmnd .
 ```
 
 We are still working in the same Singularity container.
@@ -81,7 +84,7 @@ condor_submit charm_events.sub
 
 The files I generated can be found here:
 ```bash
-cp /data/p-one/llallement/dimuon_generator/PYTHIA/results_2/ .
+cp -r /data/p-one/llallement/dimuon_generator/PYTHIA/results_2/ .
 ```
 
 The executable file should compile dire08, but it does not always. It would be safer to compile it yourself before submitting the job.
