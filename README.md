@@ -8,7 +8,7 @@ Working with: Sourav Sarkar, Juan Pablo Yáñez
 
 a) The primary and secondary muons, as well as the two hadrons generated along the way, are propagated through water and the detector volume.
 
-b) The double track properties are computed and event rates are calculated. Some cuts can be applied to obtained more realistic data: only the events that would be able to be identified as dimuons in P-ONE are selected.
+b) The double track properties are computed and event rates are calculated. Some cuts can be applied to obtain more realistic data: only the events that would be able to be identified as dimuons in P-ONE are selected.
 
 ## Terminal Set-Up
 
@@ -22,7 +22,7 @@ source env-shell_RHEL.sh
 # copy the relevant files
 cd /data/p-one/<USERNAME>/dimuon_generator/
 mkdir PROPOSAL
-cd PROPOSAL
+cd PROPOSAL/
 cp -r /data/p-one/llallement/dimuon_generator/PROPOSAL/instructions_4/* .
 ```
 
@@ -56,7 +56,7 @@ We are still working in the same Singularity container. The singularity image mu
 cp -r /projects/def-nahee/lallemen/PROPOSAL/ /scratch/<CEDAR USERNAME>/
 
 # load the Singularity environment
-cd PROPOSAL
+cd /scratch/<CEDAR USERNAME>/PROPOSAL/
 singularity shell -B /scratch:/scratch -B /cvmfs:/cvmfs nudimuon-generator_v1.0.sif
 
 # load the standard IceTray framework
@@ -81,15 +81,9 @@ scp -r <CEDAR USERNAME>@cedar.computecanada.ca:<PATH TO I3 TRACK FILES DIRECTORY
 
 Back in Illume, set up the usual Singularity and IceCube environments. A directory called event_rate was previously copied. It contains a Jupyter notebook that can be used as an example of how to use the .i3 files to calculate event rates. Another directory, event_rate_sourav, contains more of a blank notebook for you to complete on your own.
 
-In my notebook, three cuts have been applied to the data:
+In my notebook, three cuts were applied to the data:
 - minimum track segment > 200 m (the event is selected if both muon tracks are over 200 m);
 - maximum track segment > 200 m (the event is selected if either muon track is over 200 m);
 - highest track separation > 25 m & minimum track segment > 200 m (the event is selected if the muon track separation is over 25 m).
 
 Using these cuts, we can plot different event properties as shown in the notebook. These plots were not validated in any way, but you can refer to Sourav Sarkar's thesis to get an idea: https://github.com/ssarkarbht/PhDThesis.
-
-
-
-
-
-
