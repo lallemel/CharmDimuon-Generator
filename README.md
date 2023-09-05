@@ -75,7 +75,12 @@ python3 generate_i3_track_files.py
 The generated files can then be transferred to Illume to continue working on there. Run this command in Illume:
 ```bash
 scp -r <CEDAR USERNAME>@cedar.computecanada.ca:<PATH TO I3 TRACK FILES DIRECTORY> /data/p-one/<USERNAME>/dimuon_generator/PROPOSAL/
-``` 
+```
+
+Both the propagated and double-track output files can be found here:
+```bash
+cp -r /data/p-one/llallement/dimuon_generator/PROPOSAL/results_4/ .
+```
 
 ## Event Rates
 
