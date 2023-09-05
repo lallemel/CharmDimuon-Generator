@@ -1,6 +1,6 @@
 # NuDimuon-Generator
 
-## Dimuon Event Signatures in P-ONE Neutrino Telescope
+## MC Simulation of Charm Dimuon Events in P-ONE Neutrino Telescope
 
 Summer internship at the University of Alberta (May-August 2023)    
 Supervisor: Juan Pablo Yáñez (yaezgarz@ualberta.ca)  
