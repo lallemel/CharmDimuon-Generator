@@ -33,10 +33,10 @@ cd NuDimuon-Generator/
 source setup.sh
 ```
 
-## Charm Muon Generator
+## Charm Dimuon Generator
 
 ```bash
-# run the charm muon generator
+# run the charm dimuon generator
 cd .../NuDimuon-Generator/modules/
 python3 get_charm_muons.py -i <INPUT TEXT FILE PATH> -o <OUTPUT H5 FILE PATH> -m water -s <RANDOM SEED>
 ```
