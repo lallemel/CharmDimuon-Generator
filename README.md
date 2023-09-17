@@ -37,7 +37,7 @@ export LHAPDF_DATA_PATH=$DIMUON_REPO/data/pdfsets
 
 ## Interaction Target Sampler
 
-The target for the incoming neutrino is water (10 Hydrogen atoms and 8 Oxygen atoms per water molecule). The target sampler (file charm_config.py that was copied) generates sampled config files with extension *_charmConfig.txt. We use the config and .h5 files generated in the first step with the LeptonInjector.
+The target for the incoming neutrino is water (10 protons and 8 neutrons per water molecule). The target sampler (file charm_config.py that was copied) generates sampled config files with extension *_charmConfig.txt. We use the config and .h5 files generated in the first step with the LeptonInjector.
 
 ```bash
 # produce sampled configuration text output
