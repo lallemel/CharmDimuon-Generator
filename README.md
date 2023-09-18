@@ -14,6 +14,8 @@ The different steps of the generator are:
 - step 3: NuDimuon-Generator & IceTray (charm hadron decay and interaction, event weight calculation);
 - step 4: PROPOSAL & DoubleTrack-Run (daughter particle propagation, event rate calculation).
 
+My internship report can be found here for a more detailed description of the project and method and to check my results.
+
 ## A Word on P-ONE and Dimuons
 
 The Pacific Ocean Neutrino Experiment, or P-ONE, is a proposed neutrino telescope to be deployed off the coast of British Columbia, Canada. The project describes a multi cubic-kilometre Cherenkov detector designed to observe neutrino interactions at energies in the TeV-PeV range. The telescope’s unique spatial and temporal resolutions will enable unprecedented identification of the products of these interactions. With P-ONE, physicists aim to investigate fundamental particle physics at the PeV scale and uncover previously unknown astronomical phenomena.
