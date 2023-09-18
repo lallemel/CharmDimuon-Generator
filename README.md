@@ -1,4 +1,4 @@
-# NuDimuon-Generator
+# CharmDimuon-Generator
 
 ## MC Simulation of Charm Dimuon Events in P-ONE Neutrino Telescope
 
